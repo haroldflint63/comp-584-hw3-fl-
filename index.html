@@ -3,484 +3,1029 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Professional Email Template</title>
+    <meta name="description" content="AI Chips - Advanced AI Solutions for Enterprise">
+    <meta name="theme-color" content="#0f0f1e">
+    <title>AI Chips - Enterprise AI Solutions</title>
     <style>
-        /* Reset and Base Styles */
+        :root {
+            /* Primary Colors */
+            --color-cyan: #00d4ff;
+            --color-pink: #ff006e;
+            --color-purple: #7c3aed;
+            --color-dark: #0f0f1e;
+            
+            /* Neutral Colors */
+            --color-white: #ffffff;
+            --color-light-gray: #f5f5f7;
+            --color-medium-gray: #e0e0e6;
+            --color-dark-gray: #424245;
+            --color-text: #1a1a1a;
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            
+            /* Typography */
+            --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.5rem;
+            --font-size-2xl: 2rem;
+            --font-size-3xl: 2.5rem;
+            
+            /* Transitions */
+            --transition-fast: 150ms ease-out;
+            --transition-base: 250ms ease-out;
+            --transition-slow: 350ms ease-out;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text: #e8e8f0;
+                --color-light-gray: #1a1a2e;
+                --color-medium-gray: #2d2d3d;
+                --color-dark-gray: #a0a0a8;
+            }
+        }
+
+        /* High Contrast Mode */
+        @media (prefers-contrast: more) {
+            :root {
+                --color-cyan: #0099cc;
+                --color-pink: #cc0052;
+                --color-purple: #5500cc;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--font-family-sans);
+            color: var(--color-text);
+            background-color: var(--color-white);
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) fixed;
-            background-attachment: fixed;
-            min-height: 100vh;
-            padding: 20px;
+            font-size: var(--font-size-base);
         }
 
-        /* Main Container */
-        .email-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--color-dark);
+            }
         }
 
-        /* Hero Image Section */
-        .hero-section {
-            position: relative;
-            width: 100%;
-            height: auto;
-            overflow: hidden;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(102,126,234);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(118,75,162);stop-opacity:1" /></linearGradient></defs><rect width="1200" height="400" fill="url(%23grad1)"/><circle cx="100" cy="50" r="80" fill="rgba(255,255,255,0.1)"/><circle cx="1000" cy="300" r="120" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .hero-content {
-            color: #ffffff;
-            z-index: 2;
-        }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Responsive Hero Image */
-        .responsive-image {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-            border-radius: 6px;
-        }
-
-        /* Content Section */
-        .content-section {
-            padding: 40px;
-        }
-
-        .content-section h2 {
-            color: #667eea;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .content-section p {
-            color: #555;
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 0.95rem;
-        }
-
-        /* Buttons Container - Centered with Proper Spacing */
-        .buttons-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 30px 0;
-            align-items: center;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            margin: 8px auto;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            min-width: 200px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-primary {
-            background-color: #667eea;
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background-color: #5568d3;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .btn-secondary {
-            background-color: #764ba2;
-            color: #ffffff;
-        }
-
-        .btn-secondary:hover {
-            background-color: #643a88;
-            box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary:active {
-            transform: translateY(0);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-outline:hover {
-            background-color: #667eea;
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-            transform: translateY(-2px);
-        }
-
-        /* Table - Single Column 600px Layout */
-        .table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            margin: 30px 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #f9f9f9;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        table thead {
-            background-color: #667eea;
-            color: #ffffff;
-        }
-
-        table th {
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.85rem;
-        }
-
-        table td {
-            padding: 15px;
-            border-bottom: 1px solid #e0e0e0;
-            color: #555;
-        }
-
-        table tbody tr:hover {
-            background-color: #f0f0f0;
-            transition: background-color 0.2s ease;
-        }
-
-        table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Footer */
-        .footer-section {
-            background-color: #f5f5f5;
-            padding: 30px;
-            text-align: center;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .footer-section p {
-            color: #777;
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-        }
-
-        .footer-links {
-            margin-top: 15px;
-        }
-
-        .footer-links a {
-            color: #667eea;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #764ba2;
-            text-decoration: underline;
-        }
-
-        /* Accessibility Features */
+        /* Skip Links */
         .skip-link {
             position: absolute;
             top: -40px;
             left: 0;
-            background: #667eea;
-            color: white;
-            padding: 8px;
+            background-color: var(--color-cyan);
+            color: var(--color-white);
+            padding: var(--spacing-sm) var(--spacing-md);
             text-decoration: none;
-            border-radius: 0 0 4px 0;
+            border-radius: var(--radius-sm);
+            z-index: 1000;
         }
 
         .skip-link:focus {
             top: 0;
-            z-index: 100;
         }
 
-        /* Focus States for Keyboard Navigation */
-        button:focus,
-        a:focus {
-            outline: 2px solid #667eea;
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
+        }
+
+        /* Header */
+        header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid var(--color-medium-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: background-color var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            header {
+                background-color: var(--color-dark);
+                border-bottom-color: var(--color-dark-gray);
+            }
+        }
+
+        header:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .logo {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-cyan), var(--color-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: transform var(--transition-base);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo:focus {
+            outline: 2px solid var(--color-cyan);
             outline-offset: 2px;
         }
 
-        /* Accessibility - High Contrast Mode Support */
-        @media (prefers-contrast: more) {
-            body {
-                background: #ffffff;
-            }
+        nav ul {
+            display: none;
+            list-style: none;
+            gap: var(--spacing-lg);
+        }
 
-            .btn {
-                border: 2px solid currentColor;
-            }
-
-            table {
-                border: 2px solid #333;
-            }
-
-            table th {
-                border-bottom: 2px solid #333;
+        @media (min-width: 768px) {
+            nav ul {
+                display: flex;
             }
         }
 
-        /* Reduced Motion Support */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            position: relative;
+            padding: var(--spacing-sm) 0;
+        }
+
+        nav a:hover {
+            color: var(--color-cyan);
+        }
+
+        nav a:focus {
+            outline: 2px solid var(--color-cyan);
+            outline-offset: 4px;
+            border-radius: var(--radius-sm);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-cyan);
+            transition: width var(--transition-fast);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.1));
+            padding: var(--spacing-2xl) var(--spacing-md);
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                min-height: 500px;
+                padding: var(--spacing-3xl) var(--spacing-md);
             }
         }
 
-        /* Dark Mode Support */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.2), transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.2), transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.2;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: var(--font-size-3xl);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-dark-gray);
+            margin-bottom: var(--spacing-lg);
+        }
+
         @media (prefers-color-scheme: dark) {
+            .hero-subtitle {
+                color: var(--color-medium-gray);
+            }
+        }
+
+        /* Welcome Section */
+        .welcome {
+            padding: var(--spacing-3xl) var(--spacing-md);
+            text-align: center;
+            background-color: var(--color-light-gray);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .welcome {
+                background-color: var(--color-dark);
+            }
+        }
+
+        .welcome h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .welcome-text {
+            max-width: 600px;
+            margin: 0 auto var(--spacing-xl);
+            color: var(--color-dark-gray);
+            line-height: 1.8;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .welcome-text {
+                color: var(--color-medium-gray);
+            }
+        }
+
+        /* Features Grid */
+        .features {
+            padding: var(--spacing-3xl) var(--spacing-md);
+        }
+
+        .features h2 {
+            font-size: var(--font-size-2xl);
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-xl);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-medium-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .feature-card {
+                background-color: var(--color-dark);
+                border-color: var(--color-dark-gray);
+            }
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left var(--transition-base);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-cyan);
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:focus-within {
+            outline: 2px solid var(--color-cyan);
+            outline-offset: 2px;
+        }
+
+        .feature-icon {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-md);
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text);
+        }
+
+        .feature-card p {
+            color: var(--color-dark-gray);
+            font-size: var(--font-size-sm);
+            line-height: 1.6;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .feature-card p {
+                color: var(--color-medium-gray);
+            }
+        }
+
+        /* Products Section */
+        .products {
+            padding: var(--spacing-3xl) var(--spacing-md);
+            background-color: var(--color-light-gray);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .products {
+                background-color: var(--color-dark);
+            }
+        }
+
+        .products h2 {
+            font-size: var(--font-size-2xl);
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .products-table-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--color-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .products-table {
+                background-color: var(--color-dark);
+                border: 1px solid var(--color-dark-gray);
+            }
+        }
+
+        .products-table th {
+            background: linear-gradient(135deg, var(--color-cyan), var(--color-purple));
+            color: var(--color-white);
+            padding: var(--spacing-lg);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .products-table td {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--color-medium-gray);
+            color: var(--color-text);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .products-table td {
+                border-bottom-color: var(--color-dark-gray);
+            }
+        }
+
+        .products-table tr:hover td {
+            background-color: rgba(0, 212, 255, 0.05);
+            transition: background-color var(--transition-fast);
+        }
+
+        .products-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price {
+            color: var(--color-cyan);
+            font-weight: 600;
+            font-size: var(--font-size-lg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: var(--spacing-3xl) var(--spacing-md);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .cta-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            padding: var(--spacing-md) var(--spacing-xl);
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 150px;
+            gap: var(--spacing-sm);
+        }
+
+        .btn:focus {
+            outline: 2px solid var(--color-text);
+            outline-offset: 4px;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Ripple Effect */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .btn:active::after {
+            animation: ripple var(--transition-base);
+        }
+
+        @keyframes ripple {
+            to {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+
+        /* Button Variants */
+        .btn-primary {
+            background-color: var(--color-cyan);
+            color: var(--color-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: #00a8cc;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-pink);
+            color: var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #cc0052;
+            box-shadow: 0 0 20px rgba(255, 0, 110, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--color-purple);
+            color: var(--color-white);
+        }
+
+        .btn-accent:hover {
+            background-color: #5500cc;
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding: var(--spacing-3xl) var(--spacing-md);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-2xl);
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .footer-section h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-cyan);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--color-medium-gray);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-section a:hover {
+            color: var(--color-cyan);
+        }
+
+        .footer-section a:focus {
+            outline: 2px solid var(--color-cyan);
+            outline-offset: 2px;
+            border-radius: var(--radius-sm);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0, 212, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            margin-bottom: 0;
+        }
+
+        .social-links a:hover {
+            background-color: var(--color-cyan);
+            color: var(--color-dark);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+            padding-top: var(--spacing-2xl);
+            border-top: 1px solid var(--color-dark-gray);
+            color: var(--color-medium-gray);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Accessibility: Focus visible */
+        *:focus-visible {
+            outline: 2px solid var(--color-cyan);
+            outline-offset: 2px;
+        }
+
+        /* Accessibility: Print styles */
+        @media print {
+            header,
+            footer,
+            .skip-link {
+                display: none;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
             body {
-                background: #1a1a1a;
-            }
-
-            .email-container {
-                background-color: #2d2d2d;
-            }
-
-            .content-section {
-                color: #e0e0e0;
-            }
-
-            .content-section p {
-                color: #b0b0b0;
-            }
-
-            .footer-section {
-                background-color: #1a1a1a;
-                border-top-color: #444;
-            }
-
-            .footer-section p {
-                color: #999;
-            }
-
-            table {
-                background-color: #3d3d3d;
-            }
-
-            table td {
-                border-bottom-color: #444;
-                color: #e0e0e0;
-            }
-
-            table tbody tr:hover {
-                background-color: #454545;
+                background-color: var(--color-white);
+                color: var(--color-text);
             }
         }
 
-        /* Responsive Design */
-        @media screen and (max-width: 640px) {
-            .email-container {
-                border-radius: 0;
-                box-shadow: none;
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
             }
 
-            .hero-section {
-                padding: 40px 15px;
+            .features-grid {
+                gap: var(--spacing-md);
             }
 
-            .hero-content h1 {
-                font-size: 1.8rem;
+            .feature-card {
+                padding: var(--spacing-lg);
             }
 
-            .hero-content p {
-                font-size: 0.95rem;
-            }
-
-            .content-section {
-                padding: 25px;
-            }
-
-            .content-section h2 {
-                font-size: 1.4rem;
+            .cta-buttons {
+                gap: 20px;
             }
 
             .btn {
-                padding: 12px 24px;
-                font-size: 0.9rem;
-                min-width: 180px;
-            }
-
-            table {
-                font-size: 0.9rem;
-            }
-
-            table th,
-            table td {
-                padding: 12px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 1.5rem;
-            }
-
-            .content-section {
-                padding: 15px;
-            }
-
-            .buttons-container {
-                gap: 12px;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.85rem;
-                min-width: 160px;
+                min-width: 120px;
+                padding: var(--spacing-md) var(--spacing-lg);
+                font-size: var(--font-size-sm);
             }
         }
     </style>
 </head>
 <body>
-    <!-- Skip to Main Content Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Skip to main content link -->
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-    <div class="email-container">
-        <!-- Hero Section with Background Image -->
-        <section class="hero-section" aria-labelledby="hero-title">
+    <!-- Header with Navigation -->
+    <header role="banner">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" aria-label="AI Chips - Home">AI Chips</a>
+                <nav aria-label="Main Navigation">
+                    <ul>
+                        <li><a href="#features" aria-label="Navigate to Features section">Features</a></li>
+                        <li><a href="#products" aria-label="Navigate to Products section">Products</a></li>
+                        <li><a href="#contact" aria-label="Navigate to Contact section">Contact</a></li>
+                        <li><a href="#about" aria-label="Navigate to About section">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Hero Banner">
             <div class="hero-content">
-                <h1 id="hero-title">Welcome to Our Platform</h1>
-                <p>Discover Amazing Features Today</p>
+                <h1>Welcome to AI Chips</h1>
+                <p class="hero-subtitle">Empowering enterprises with cutting-edge artificial intelligence solutions for tomorrow's challenges</p>
             </div>
         </section>
 
-        <!-- Main Content Section -->
-        <main id="main-content" class="content-section">
-            <h2>Get Started Now</h2>
-            <p>
-                Our platform offers comprehensive solutions designed to help you achieve your goals. 
-                With intuitive design and powerful features, we're here to support your success journey.
-            </p>
+        <!-- Welcome Section -->
+        <section class="welcome" aria-label="Welcome to AI Chips">
+            <div class="container">
+                <h2>Introducing AI Chips</h2>
+                <p class="welcome-text">
+                    At AI Chips, we believe artificial intelligence should be accessible, reliable, and transformative. 
+                    Our comprehensive suite of AI solutions is designed to help businesses of all sizes unlock new 
+                    possibilities, streamline operations, and drive innovation at scale.
+                </p>
+            </div>
+        </section>
 
-            <!-- Responsive Image -->
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 300'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:rgb(102,126,234);stop-opacity:1' /><stop offset='100%' style='stop-color:rgb(118,75,162);stop-opacity:1' /></linearGradient></defs><rect width='600' height='300' fill='url(%23grad)'/><text x='300' y='150' font-size='24' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>Responsive Hero Image</text></svg>" 
-                 alt="Professional hero image showcasing platform features" 
-                 class="responsive-image"
-                 role="img">
+        <!-- Features Section -->
+        <section class="features" id="features" aria-label="Our Features">
+            <div class="container">
+                <h2>Why Choose AI Chips?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">⚡</div>
+                        <h3>Lightning Fast Performance</h3>
+                        <p>Optimized algorithms and infrastructure deliver sub-millisecond response times for real-time applications and instant insights.</p>
+                    </div>
 
-            <!-- Centered Buttons with Proper Spacing -->
-            <div class="buttons-container">
-                <button class="btn btn-primary" aria-label="Get Started with our platform">Get Started</button>
-                <button class="btn btn-secondary" aria-label="Learn more about our features">Learn More</button>
-                <button class="btn btn-outline" aria-label="View our pricing options">View Pricing</button>
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🔒</div>
+                        <h3>Enterprise Security</h3>
+                        <p>Bank-grade encryption, compliance with global standards, and multi-layer security protocols protect your data and models.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">📊</div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Gain deeper insights with our powerful analytics engine, providing actionable intelligence and predictive capabilities.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🤖</div>
+                        <h3>Smart Automation</h3>
+                        <p>Automate complex workflows and processes with intelligent systems that learn and adapt to your business needs.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🌍</div>
+                        <h3>Global Scalability</h3>
+                        <p>Deploy with confidence knowing our infrastructure scales globally with 99.99% uptime guarantee and zero latency.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">👥</div>
+                        <h3>Expert Support</h3>
+                        <p>24/7 dedicated support from AI specialists, comprehensive documentation, and continuous training for your team.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products" id="products" aria-label="Our Products">
+            <div class="container">
+                <h2>Our Product Lineup</h2>
+                <div class="products-table-wrapper">
+                    <table class="products-table" role="table" aria-label="AI Chips Product Lineup with Features and Pricing">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>AI Pro</strong></td>
+                                <td>Perfect for startups and small businesses getting started with AI solutions</td>
+                                <td class="price">$99/mo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI Plus</strong></td>
+                                <td>Advanced features for growing companies needing enhanced capabilities and support</td>
+                                <td class="price">$299/mo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI Enterprise</strong></td>
+                                <td>Comprehensive solution for large organizations requiring custom deployments and SLAs</td>
+                                <td class="price">$999/mo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI Cloud</strong></td>
+                                <td>Ultimate flexibility with fully managed cloud infrastructure and premium support</td>
+                                <td class="price">Custom</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-Action Section -->
+        <section class="cta-section" id="contact" aria-label="Call to Action">
+            <div class="container">
+                <h2>Ready to Transform Your Business?</h2>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" aria-label="Learn more about AI Chips solutions">
+                        <span>Learn More</span>
+                    </button>
+                    <button class="btn btn-secondary" aria-label="Contact our sales team">
+                        <span>Contact Us</span>
+                    </button>
+                    <button class="btn btn-accent" aria-label="Sign up for AI Chips today">
+                        <span>Sign Up Today</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo" id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About AI Chips</h3>
+                    <p>Leading provider of enterprise AI solutions, empowering businesses worldwide to harness the power of artificial intelligence.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links" aria-label="Social Media Links">
+                        <a href="https://twitter.com" aria-label="Follow AI Chips on Twitter">
+                            <span aria-hidden="true">𝕏</span>
+                        </a>
+                        <a href="https://linkedin.com" aria-label="Connect with AI Chips on LinkedIn">
+                            <span aria-hidden="true">in</span>
+                        </a>
+                        <a href="https://github.com" aria-label="View AI Chips on GitHub">
+                            <span aria-hidden="true">⚙️</span>
+                        </a>
+                        <a href="https://youtube.com" aria-label="Subscribe to AI Chips on YouTube">
+                            <span aria-hidden="true">▶</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <!-- Table - Single Column 600px Layout -->
-            <h2 style="margin-top: 40px;">Our Features</h2>
-            <div class="table-wrapper">
-                <table role="table" aria-label="Features and benefits comparison table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Feature</th>
-                            <th scope="col">Benefit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Fast Performance</strong></td>
-                            <td>Lightning-quick load times and smooth interactions</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Security</strong></td>
-                            <td>Enterprise-grade encryption and protection</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Support</strong></td>
-                            <td>24/7 dedicated customer support team</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Scalability</strong></td>
-                            <td>Grows with your business needs effortlessly</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Analytics</strong></td>
-                            <td>Comprehensive insights and reporting tools</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Chips. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
+        </div>
+    </footer>
 
-            <p style="margin-top: 30px;">
-                Join thousands of satisfied customers who are already experiencing the benefits 
-                of our innovative solution. Take the first step towards transformation today.
-            </p>
-        </main>
+    <script>
+        // Enhanced keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            // Tab key navigation
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
 
-        <!-- Footer Section -->
-        <footer class="footer-section" aria-labelledby="footer-title">
-            <h3 id="footer-title" style="display: none;">Footer</h3>
-            <p>&copy; 2025 Professional Email Template. All rights reserved.</p>
-            <p>Designed with accessibility and responsiveness in mind.</p>
-            <div class="footer-links">
-                <a href="#privacy" aria-label="Read our privacy policy">Privacy Policy</a>
-                <a href="#terms" aria-label="View our terms of service">Terms of Service</a>
-                <a href="#contact" aria-label="Contact our support team">Contact Us</a>
-            </div>
-        </footer>
-    </div>
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-nav');
+        });
+
+        // Button click ripple effect enhancement
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                // Create ripple element
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.width = '0';
+                ripple.style.height = '0';
+                ripple.style.borderRadius = '50%';
+                ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                ripple.style.pointerEvents = 'none';
+                ripple.style.animation = 'ripple 600ms ease-out';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Smooth scroll behavior for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const element = document.querySelector(href);
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    element.focus();
+                }
+            });
+        });
+
+        // Lazy loading for performance
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transition = 'opacity 0.6s ease-out';
+                observer.observe(card);
+            });
+        }
+    </script>
 </body>
 </html>
