@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Professional Email Template</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) fixed;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Hero Image Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(102,126,234);stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(118,75,162);stop-opacity:1" /></linearGradient></defs><rect width="1200" height="400" fill="url(%23grad1)"/><circle cx="100" cy="50" r="80" fill="rgba(255,255,255,0.1)"/><circle cx="1000" cy="300" r="120" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            color: #ffffff;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Hero Image */
+        .responsive-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 40px;
+        }
+
+        .content-section h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .content-section p {
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        /* Buttons Container - Centered with Proper Spacing */
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            margin: 8px auto;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 200px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: #667eea;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #5568d3;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background-color: #764ba2;
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #643a88;
+            box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(0);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-outline:hover {
+            background-color: #667eea;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Table - Single Column 600px Layout */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        table thead {
+            background-color: #667eea;
+            color: #ffffff;
+        }
+
+        table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+        }
+
+        table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
+        }
+
+        table tbody tr:hover {
+            background-color: #f0f0f0;
+            transition: background-color 0.2s ease;
+        }
+
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer-section {
+            background-color: #f5f5f5;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-section p {
+            color: #777;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Accessibility Features */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #667eea;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Focus States for Keyboard Navigation */
+        button:focus,
+        a:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* Accessibility - High Contrast Mode Support */
+        @media (prefers-contrast: more) {
+            body {
+                background: #ffffff;
+            }
+
+            .btn {
+                border: 2px solid currentColor;
+            }
+
+            table {
+                border: 2px solid #333;
+            }
+
+            table th {
+                border-bottom: 2px solid #333;
+            }
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1a1a1a;
+            }
+
+            .email-container {
+                background-color: #2d2d2d;
+            }
+
+            .content-section {
+                color: #e0e0e0;
+            }
+
+            .content-section p {
+                color: #b0b0b0;
+            }
+
+            .footer-section {
+                background-color: #1a1a1a;
+                border-top-color: #444;
+            }
+
+            .footer-section p {
+                color: #999;
+            }
+
+            table {
+                background-color: #3d3d3d;
+            }
+
+            table td {
+                border-bottom-color: #444;
+                color: #e0e0e0;
+            }
+
+            table tbody tr:hover {
+                background-color: #454545;
+            }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 640px) {
+            .email-container {
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .hero-section {
+                padding: 40px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .content-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+                min-width: 180px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            table th,
+            table td {
+                padding: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 15px;
+            }
+
+            .buttons-container {
+                gap: 12px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+                min-width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="email-container">
+        <!-- Hero Section with Background Image -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title">Welcome to Our Platform</h1>
+                <p>Discover Amazing Features Today</p>
+            </div>
+        </section>
+
+        <!-- Main Content Section -->
+        <main id="main-content" class="content-section">
+            <h2>Get Started Now</h2>
+            <p>
+                Our platform offers comprehensive solutions designed to help you achieve your goals. 
+                With intuitive design and powerful features, we're here to support your success journey.
+            </p>
+
+            <!-- Responsive Image -->
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 300'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:rgb(102,126,234);stop-opacity:1' /><stop offset='100%' style='stop-color:rgb(118,75,162);stop-opacity:1' /></linearGradient></defs><rect width='600' height='300' fill='url(%23grad)'/><text x='300' y='150' font-size='24' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>Responsive Hero Image</text></svg>" 
+                 alt="Professional hero image showcasing platform features" 
+                 class="responsive-image"
+                 role="img">
+
+            <!-- Centered Buttons with Proper Spacing -->
+            <div class="buttons-container">
+                <button class="btn btn-primary" aria-label="Get Started with our platform">Get Started</button>
+                <button class="btn btn-secondary" aria-label="Learn more about our features">Learn More</button>
+                <button class="btn btn-outline" aria-label="View our pricing options">View Pricing</button>
+            </div>
+
+            <!-- Table - Single Column 600px Layout -->
+            <h2 style="margin-top: 40px;">Our Features</h2>
+            <div class="table-wrapper">
+                <table role="table" aria-label="Features and benefits comparison table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Feature</th>
+                            <th scope="col">Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Fast Performance</strong></td>
+                            <td>Lightning-quick load times and smooth interactions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Security</strong></td>
+                            <td>Enterprise-grade encryption and protection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Support</strong></td>
+                            <td>24/7 dedicated customer support team</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scalability</strong></td>
+                            <td>Grows with your business needs effortlessly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analytics</strong></td>
+                            <td>Comprehensive insights and reporting tools</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 30px;">
+                Join thousands of satisfied customers who are already experiencing the benefits 
+                of our innovative solution. Take the first step towards transformation today.
+            </p>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer-section" aria-labelledby="footer-title">
+            <h3 id="footer-title" style="display: none;">Footer</h3>
+            <p>&copy; 2025 Professional Email Template. All rights reserved.</p>
+            <p>Designed with accessibility and responsiveness in mind.</p>
+            <div class="footer-links">
+                <a href="#privacy" aria-label="Read our privacy policy">Privacy Policy</a>
+                <a href="#terms" aria-label="View our terms of service">Terms of Service</a>
+                <a href="#contact" aria-label="Contact our support team">Contact Us</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
