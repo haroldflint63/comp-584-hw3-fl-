@@ -795,15 +795,14 @@
 
             <!-- Centered Buttons with Proper Spacing -->
             <div class="buttons-container">
-                <a href="#learn-more" class="btn btn-primary" aria-label="Learn more about AI Chips">Learn More</a>
+                <a href="#features" class="btn btn-primary" aria-label="Learn more about AI Chips">Learn More</a>
                 <a href="#contact" class="btn btn-secondary" aria-label="Contact our sales team">Contact Us</a>
-                <a href="#signup" class="btn btn-outline" aria-label="Sign up for AI Chips today">Sign Up Today</a>
+                <a href="#products" class="btn btn-outline" aria-label="Sign up for AI Chips today">Sign Up Today</a>
             </div>
         </main>
 
         <!-- Footer Section -->
-        <footer class="footer-section" aria-labelledby="footer-title">
-            <h2 id="footer-title" style="display: none;">Footer Information</h2>
+        <footer class="footer-section" aria-label="Footer Information">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>About AI Chips</h3>
@@ -883,17 +882,6 @@
         document.addEventListener('mousedown', () => {
             document.body.classList.remove('keyboard-nav');
         });
-
-        // Announce dynamic content to screen readers
-        function announceToScreenReader(message) {
-            const announcement = document.createElement('div');
-            announcement.setAttribute('role', 'alert');
-            announcement.setAttribute('aria-live', 'polite');
-            announcement.classList.add('sr-only');
-            announcement.textContent = message;
-            document.body.appendChild(announcement);
-            setTimeout(() => announcement.remove(), 1000);
-        }
     </script>
 </body>
 </html>
