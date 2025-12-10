@@ -68,6 +68,12 @@
             outline-offset: 2px;
         }
         
+        /* Skip link - visible on focus */
+        a[href="#main-content"]:focus {
+            position: static !important;
+            left: auto !important;
+        }
+        
         /* Reduced motion support */
         @media (prefers-reduced-motion: reduce) {
             * {
@@ -80,7 +86,7 @@
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f7; line-height: 1.6;">
     
     <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" onfocus="this.style.position='static'; this.style.width='auto'; this.style.height='auto';" onblur="this.style.position='absolute'; this.style.left='-9999px'; this.style.width='1px'; this.style.height='1px';">Skip to main content</a>
+    <a href="#main-content" style="position: absolute; left: -9999px; top: 0; background: #00d4ff; color: #0f0f1e; padding: 8px 16px; text-decoration: none; z-index: 1000; font-weight: 600;">Skip to main content</a>
     
     <!-- Email Container - Single Column 600px Table -->
     <table role="presentation" class="email-container" style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff;" cellpadding="0" cellspacing="0" border="0" aria-label="AI Chips Email Newsletter">
@@ -99,13 +105,11 @@
         
         <!-- Hero Image Section - Fully Responsive -->
         <tr>
-            <td style="padding: 0; text-align: center; position: relative;">
+            <td style="padding: 0; text-align: center;">
                 <img src="https://via.placeholder.com/600x350/00d4ff/ffffff?text=AI+Technology+Hero" 
                      alt="Advanced AI Chips technology showcasing cutting-edge processors and neural network capabilities" 
                      class="hero-image"
                      style="width: 100%; max-width: 600px; height: auto; display: block; object-fit: cover;">
-                <!-- Overlay for text contrast -->
-                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);"></div>
             </td>
         </tr>
         
@@ -201,7 +205,7 @@
                         <td>
                             <img src="https://via.placeholder.com/250x180/7c3aed/ffffff?text=AI+Chip+Pro" 
                                  alt="AI Chips Pro Series - Advanced neural processing unit with 24GB memory and 125 TeraOPS processing power" 
-                                 style="width: 250px; height: 180px; border-radius: 10px; box-shadow: 0 6px 20px rgba(124,58,237,0.3); margin-bottom: 20px; display: inline-block;">
+                                 style="width: 100%; max-width: 250px; height: auto; border-radius: 10px; box-shadow: 0 6px 20px rgba(124,58,237,0.3); margin-bottom: 20px; display: inline-block;">
                             <h3 style="color: #7c3aed; font-size: 26px; margin: 20px 0 12px 0; font-weight: 700;">
                                 AI Chips Pro Series
                             </h3>
@@ -360,11 +364,6 @@
         </tr>
         
     </table>
-    
-    <!-- Accessibility: Screen reader announcement for end of email -->
-    <div role="region" aria-label="End of email content" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">
-        End of AI Chips newsletter email
-    </div>
     
 </body>
 </html>
